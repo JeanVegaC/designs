@@ -1,0 +1,104 @@
+/* ******** EFFECT - 3D ******** */
+
+#effect-3d {
+    display: flex;
+    height: calc(100vh - 48px);
+    width: 100%;
+}
+
+#effect-3d .container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(35, 35, 35);
+}
+
+#effect-3d .container .ul-cards {
+    display: flex;
+    gap: 2rem;
+
+}
+
+#effect-3d .container .ul-cards .li-card {
+    width: 250px;
+    height: 300px;
+    position: relative;
+    perspective: 700px;
+    overflow: visible;
+}
+
+#effect-3d .container .ul-cards .li-card .img-overlay {
+    object-fit: cover;
+    object-position: 25% 0;
+    pointer-events: none;
+    transition: transform .5s;
+    height: 100%;
+    width: 100%;
+}
+
+#effect-3d .container .ul-cards .li-card .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: opacity .5s, transform .5s;
+    pointer-events: none;
+
+}
+
+#effect-3d .container .ul-cards .li-card .img-3d {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transition: bottom .3s, opacity .2s, height .4s;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#effect-3d .container .ul-cards .li-card .info {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity .5s, bottom .5s;
+    color: #fff;
+}
+
+
+/* HOVER */
+
+#effect-3d .container .ul-cards .li-card:hover .img-overlay,
+#effect-3d .container .ul-cards .li-card:hover .overlay {
+    transform: rotate3d(1, 0, 0, 30deg);
+    transition: transform .5s;
+}
+
+#effect-3d .container .ul-cards .li-card:hover .overlay {
+    opacity: .625;
+}
+
+#effect-3d .container .ul-cards .li-card:hover .img-3d {
+    transition: bottom .4s, opacity .5s;
+    bottom: -20px;
+    opacity: 1;
+    height: 130%;
+}
+
+#effect-3d .container .ul-cards .li-card:hover .info {
+    bottom: 45px;
+    opacity: 1;
+}
+
+
+
+/* ************************ */
